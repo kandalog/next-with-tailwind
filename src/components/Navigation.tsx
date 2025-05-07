@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import { BiChevronRight } from "react-icons/bi";
 import { HiMiniBars3 } from "react-icons/hi2";
+import { IoClose } from "react-icons/io5";
 
 const navigationMenu = [
   {
@@ -27,6 +31,12 @@ const navigationMenu = [
 ];
 
 function Navigation() {
+  const [navOpen, setNavOpen] = useState(true);
+
+  const mobileMenuHandler = () => {
+    setNavOpen(!navOpen)
+  }
+
   return (
     <>
       {/* WEBメニュー */}
@@ -56,11 +66,14 @@ function Navigation() {
             </div>
             {/* ボタン */}
             <div>
-              <Link className="btnBlue inline-flex lg:inline-block" href="/">
+              <Link
+                className="btnBlue inline-flex max-lg:hidden lg:inline-block"
+                href="/"
+              >
                 申し込み
               </Link>
               {/* モバイル用 */}
-              <button className="block lg:hidden">
+              <button className="block lg:hidden" onClick={mobileMenuHandler}>
                 <HiMiniBars3 className="text-4xl" />
               </button>
             </div>
@@ -69,6 +82,32 @@ function Navigation() {
       </header>
 
       {/* モバイルメニュー */}
+      <div className={navOpen ? "py-0 block w-screen z-[999]" : "hidden"}>
+        <div className="h-screen w-screen z-[999] top-0 fixed bg-black/50" onClick={mobileMenuHandler}>
+          <div className="h-screen bg-white w-[380px] top-0 right-0 z-[999] fixed">
+            <div className="h-14 px-10 border-b flex items-center">
+              <button className="flex items-center space-x-3" onClick={mobileMenuHandler}>
+                <IoClose />
+                <span>閉じる</span>
+              </button>
+            </div>
+            <div className="h-full py-3 px-10 pb-20">
+              <ul className="block mb-7">
+                {navigationMenu.map((item, index) => (
+                  <li key={index}>
+                    <Link href={item.href} className="group flex items-center py-2 duration-300 transition-all ease-out hover:text-green" onClick={() => setNavOpen(false)}>
+                      <span>{item.label}</span>
+                      <span className="relative left-2 duration-300 transition-all ease-in-out opacity-0 group-hover:opacity-100 group-hover:left-3">
+                        <BiChevronRight className="text-xl" />
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
