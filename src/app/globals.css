@@ -11,6 +11,12 @@
   hover:top-1 relative top-0 inline-block;
 }
 
+.btnGreen {
+  @apply py-4 px-4 text-white rounded-lg bg-green transition-all 
+  ease-in-out duration-300 hover:bg-[#006e54] hover:shadow-lg
+  hover:top-1 relative top-0 inline-block;
+}
+
 @theme {
   --color-green: #00a497;
   --color-blue: #00a3af;
