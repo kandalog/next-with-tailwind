@@ -46,7 +46,7 @@ function Testimonials() {
   }, []);
 
   return (
-    <section id="textimonials" className="py-20 bg-light">
+    <section id="testimonials" className="py-20 bg-light">
       <div className="container px-4 mx-auto">
         <div className="lg:flex justify-between items-center">
           {/* 右 */}

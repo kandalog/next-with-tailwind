@@ -48,7 +48,7 @@ function Solutions() {
   return (
     <section
       id="solutions"
-      className="py-32 bg-light overflow-x-hidden max-md:py-5"
+      className="py-32 bg-light max-md:py-5 overflow-hidden"
     >
       <div className="container px-4 mx-auto flex">
         <div className="lg:flex space-x-2 justify-between max-md:flex max-md:flex-col">
@@ -70,7 +70,7 @@ function Solutions() {
                   {/* 下の段 */}
                   <div className="w-4/12 flex">
                     <div className="ml-auto">
-                      <div className="bg-yellowLight w-10 h-10 lg:w-24 lg:h-24 rounded-2xl rounded-bl-[200px]" />
+                      <div className="bg-yellowLight w-10 h-10 lg:w-24 lg:h-24 rounded-2xl rounded-bl-[200px] max-md:w-16 max-md:h-16" />
                     </div>
                   </div>
                   <div className="w-6/12">
@@ -89,15 +89,15 @@ function Solutions() {
               <div className="mt-auto">
                 <div className="flex flex-col gap-2">
                   <div>
-                    <div className="bg-purpleLight w-10 lg:w-20 lg:h-20 rounded-2xl rounded-tr-[200px]" />
+                    <div className="bg-purpleLight w-10 lg:w-20 lg:h-20 rounded-2xl rounded-tr-[200px] max-md:w-14 max-md:h-14" />
                   </div>
                   <div>
                     <Image
                       src={solutionsContent.images.img2}
-                      width={626}
-                      height={640}
+                      width={547}
+                      height={573}
                       alt="img2"
-                      className="object-cover h-full w-full rounded-lg"
+                      className="object-cover h-full w-full rounded-lg shadow-2xl"
                       data-aos="fade-up"
                       data-aos-delay="300"
                     />
